@@ -534,12 +534,12 @@ Connect.prototype.gettxoutproof = function(txid,blockhash){
   parameter. This parameter is enabled by default on all
   KMD-based blockchains, and should never be disabled.
 
-  Arguments
+  Arguments:
   "txid" 	(string) 	a transaction hash
   "blockhash" 	(string, optional) 	if specified, the method
                 looks for the relevant transaction id in this
                 block hash
-  Response
+  Response:
   "data" 	(string) 	a string that is a serialized,
           hex-encoded data for the proof
 
@@ -566,10 +566,10 @@ Connect.prototype.gettxoutsetinfo = function(){
   Note this call may take a long time to complete,
    depending on the state of your blockchain.
 
-  Arguments
+  Arguments:
   (none)
 
-  Response
+  Response:
   "height" 	(numeric) 	the current block height (index)
   "bestblock" 	(string) 	the best block hash hex
   "transactions" 	(numeric) 	the number of transactions
@@ -593,10 +593,10 @@ Connect.prototype.kvsearch = function(key){
   a key stored via the kvupdate command.
   This feature is only available for Smart Chains.
 
-  Arguments
+  Argument:
   key 	(string, required) 	the key for which the user desires to search the chain
 
-  Response
+  Response:
   "coin" 	(string) 	the chain on which the key is stored
   "currentheight" 	(numeric) 	the current height of the chain
   "key" 	(string) 	the key
@@ -664,19 +664,19 @@ Connect.prototype.minerids = function(height){
   notary nodes and external miners at a specific block
   height. The response will calculate results according
   to the 2000 blocks proceeding the indicated "height" block.
-  #
-  Arguments
+
+  Arguments:
   Name 	Type 	Description
   heights 	(number) 	the block height for the query
-  #
-  Response
+
+  Response:
   Name 	Type 	Description
   "mined":
   "notaryid" 	(number) 	the id of the specific notary node
   "kmdaddress" 	(string) 	the KMD address of the notary node
   "pubkey" 	(string) 	the public signing key of the notary node
   "blocks" 	(number)
-  #
+
   Examples:
   conn.minerids(1000)
 
