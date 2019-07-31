@@ -1,4 +1,4 @@
-![Komodo_Logo](logo.png?raw=true)
+![Komodo_Logo](logo.svg?raw=true)
 # Komodo-RPC-Node-Library
 API for Komodo RPC using Node JS
 
