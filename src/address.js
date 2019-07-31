@@ -5,7 +5,6 @@ let Connect = komodo.Connect
 
 Connect.prototype.getaddressbalance = function(addresses){
   /*
-
   The getaddressbalance method returns the confirmed balance
   for an address, or addresses. It requires addressindex to
   be enabled.
@@ -20,7 +19,6 @@ Connect.prototype.getaddressbalance = function(addresses){
 
   eg:
   conn.getaddressbalance(["RXPCMQLny4EqjEje94dm2CfCfTpxqyXK5L"])
-
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getaddressbalance";
