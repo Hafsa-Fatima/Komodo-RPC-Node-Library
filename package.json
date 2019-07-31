@@ -1,0 +1,31 @@
+{
+  "name": "npm-komodorpc-library",
+  "version": "1.0.0",
+  "description": "An API for KOMODO RPC",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.88.0",
+    "turbo-cli": "^0.32.60",
+    "webpack": "^4.35.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hafsa-Fatima/Komodo-RPC-Node-Library.git"
+  },
+  "keywords": [
+    "npm",
+    "npm-komodorpc",
+    "npm-komodo",
+    "komodo"
+  ],
+  "author": "Hafsa Fatima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hafsa-Fatima/Komodo-RPC-Node-Library/issues"
+  },
+  "homepage": "https://github.com/Hafsa-Fatima/Komodo-RPC-Node-Library#readme"
+}
