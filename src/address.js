@@ -41,41 +41,13 @@ Connect.prototype.getaddressdeltas = function(addresses,start,end,chaininfo){
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getaddressdeltas";
   if(addresses && start && end && chaininfo)
-    dataString.params = [{addresses:[addresses],start:start,end:end,chaininfo:chaininfo}]
+    dataString.params = [{addresses:addresses,start:start,end:end,chainInfo:chaininfo}]
   else if(addresses)
     dataString.params = [{"addresses":addresses}]
   else
     dataString.params = []
-    console.log(JSON.stringify(dataString));
-  // return rpc.rpc_request(dataString, this.json)
-  var request = require('request');
-
-  var headers = {
-      'content-type': 'text/plain;'
-  };
-
-  // var dataString = '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["RXPCMQLny4EqjEje94dm2CfCfTpxqyXK5L"],"start":1,"end":20,"chainInfo":true}]}';
-
-  var options = {
-      url: 'http://127.0.0.1:9032/',
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(dataString),
-      auth: {
-          'user': 'user2863247190',
-          'pass': 'passcd362862e2d5d2d752a123857dbba0474cd48a55af419c022b1f59a2c21aecab5a'
-      }
-  };
-
-  function callback(error, response, body) {
-      if (!error && response.statusCode == 200) {
-          console.log(body);
-      }
-  }
-
-  request(options, callback);
-
-
+    // console.log(JSON.stringify(dataString));
+  return rpc.rpc_request(dataString, this.json)
 
 }
 
