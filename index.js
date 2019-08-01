@@ -8,6 +8,7 @@ const Disclosure = require('./src/disclosure')
 const Generate = require('./src/generate')
 const Jumblr = require('./src/jumblr')
 const Mining = require('./src/mining')
+const Network = require('./src/network')
 
 
 module.exports = {
