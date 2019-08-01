@@ -7,6 +7,7 @@ const Control = require('./src/control')
 const Disclosure = require('./src/disclosure')
 const Generate = require('./src/generate')
 const Jumblr = require('./src/jumblr')
+const Mining = require('./src/mining')
 
 
 module.exports = {

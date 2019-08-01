@@ -30,5 +30,5 @@ module.exports.rpc_request = (data,connectJSON) => {
            })
        })
        .then((body)=>(body.result))
-       .catch((err)=>('code: '+err.error.code+'\nmessage: '+err.error.message))
+       .catch((err)=>('error code: '+err.error.code+'\nerror message: '+err.error.message))
 }
