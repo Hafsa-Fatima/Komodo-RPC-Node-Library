@@ -9,6 +9,7 @@ const Generate = require('./src/generate')
 const Jumblr = require('./src/jumblr')
 const Mining = require('./src/mining')
 const Network = require('./src/network')
+const Rawtransaction = require('./src/rawtransaction')
 
 
 module.exports = {
