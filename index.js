@@ -5,6 +5,7 @@ const Address = require('./src/address')
 const Blockchain = require('./src/blockchain')
 const Control = require('./src/control')
 const Disclosure = require('./src/disclosure')
+const Generate = require('./src/generate')
 
 
 module.exports = {
