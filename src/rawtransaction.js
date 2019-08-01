@@ -14,7 +14,6 @@ Connect.prototype.createrawtransaction = function(transaction,addresses){
   transmitted to the network.
 
   Arguments:
-
   "transactions" 	(string, required) 	a json array of json objects
   "txid" 	(string, required) 	the transaction id
   "vout" 	(numeric, required) 	the output number
