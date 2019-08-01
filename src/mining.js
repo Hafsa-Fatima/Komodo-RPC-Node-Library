@@ -3,26 +3,38 @@ let rpc = require('../rpc_util')
 
 let Connect = komodo.Connect
 
-Connect.prototype.getblocksubsidy = function(){
+Connect.prototype.getblocksubsidy = function(height){
   /*
+  The getblocksubsidy method returns the
+  block-subsidy reward. The resulting calculation
+  takes into account the mining slow start. This
+  method can be used in conjunction with custom
+  mining rewards designed by the developers of a
+  KMD-based Smart Chain.
 
-  Arguments:
+  Arguments
+  height 	(numeric, optional) 	the block height; if the block height is not provided, the method defaults to the current height of the chain
 
-  Response:
+  Response
+  "miner" 	(numeric) 	the mining reward amount
 
-  eg:
+  Examples:
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
-    dataString.params = []
+  dataString.method = "getblocksubsidy";
+  if(height ==0 || height)
+    dataString.params = [height]
   else
     dataString.params = []
   return rpc.rpc_request(dataString, this.json)
 }
-Connect.prototype.getblocktemplate = function(){
+Connect.prototype.getblocktemplate = function(mode,capabilities,support){
   /*
+  The getblocktemplate method returns data that is necessary to construct a block.
+
+  If the request parameters include a mode key, it is used to explicitly select between the default 'template' request, a 'proposal' or 'disablecb'.
+
 
   Arguments:
 
@@ -32,8 +44,8 @@ Connect.prototype.getblocktemplate = function(){
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
+  dataString.method = "getblocktemplate";
+  if(dataString)
     dataString.params = []
   else
     dataString.params = []
@@ -50,8 +62,8 @@ Connect.prototype.getlocalsolps = function(){
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
+  dataString.method = "getlocalsolps";
+  if(dataString)
     dataString.params = []
   else
     dataString.params = []
@@ -68,8 +80,8 @@ Connect.prototype.getmininginfo = function(){
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
+  dataString.method = "getmininginfo";
+  if(dataString)
     dataString.params = []
   else
     dataString.params = []
@@ -86,8 +98,8 @@ Connect.prototype.getnetworkhashps = function(){
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
+  dataString.method = "getnetworkhashps";
+  if(dataString)
     dataString.params = []
   else
     dataString.params = []
@@ -104,8 +116,8 @@ Connect.prototype.getnetworksolps = function(){
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
+  dataString.method = "getnetworksolps";
+  if(dataString)
     dataString.params = []
   else
     dataString.params = []
@@ -122,8 +134,8 @@ Connect.prototype.prioritisetransaction = function(){
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
+  dataString.method = "prioritisetransaction";
+  if(dataString)
     dataString.params = []
   else
     dataString.params = []
@@ -140,8 +152,8 @@ Connect.prototype.submitblock = function(){
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
-  dataString.method = "";
-  if()
+  dataString.method = "submitblock";
+  if(dataString)
     dataString.params = []
   else
     dataString.params = []
