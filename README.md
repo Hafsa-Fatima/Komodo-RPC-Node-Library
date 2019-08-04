@@ -56,8 +56,9 @@ Create an object of **Komodo Connect** class with following parameters to popula
 | node_ipaddress |  IP address of the node where the Komodo-daemon is running; **Default: '127.0.0.1'** |
 |    rpc_port    |                 Port number where the Komodo-daemon is listening for RPCs            |
 
+
 ### Documentation:
-- #### Wiki: [Komodo RPC API Library](https://github.com/Hafsa-Fatima/Komodo-RPC-Node-Library/)
+- ####  Wiki: [Komodo RPC API Library](https://github.com/Hafsa-Fatima/Komodo-RPC-Node-Library/)
 - #### [Komodo API Guide](https://developers.komodoplatform.com/basic-docs/smart-chains/smart-chain-api/)
 ### NPM package listing:
-- #### [https://www.npmjs.com/package/npm-komodorpc-library)
+- #### [NPM-komodo-library](https://www.npmjs.com/package/npm-komodorpc-library)
