@@ -14,7 +14,7 @@
 - Create object for Connect class using `rpc_user`, `rpc_password`, `rpc_ipaddress`, `rpc_port` parameters from YOUR_SMARTCHAIN_name.conf file
 - Use the above object to call any method
 - Response is a pending Promise return
-- Use Async/Await vs Promise to capture the response
+- Use Async/Await or Promise to capture the response
 
 ##### Example
 - Using Async function and await keyword :
