@@ -11,6 +11,7 @@ const Mining = require('./src/mining')
 const Network = require('./src/network')
 const Rawtransaction = require('./src/rawtransaction')
 const Util = require('./src/util')
+const Crosschain = require('./src/crosschain')
 
 
 module.exports = {

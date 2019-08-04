@@ -17,7 +17,7 @@ Connect.prototype.getaddressbalance = function(addresses){
   "received" 	(number) 	the total confirmed number of satoshis
                 received (including change)
 
-  eg:
+  Example:
   conn.getaddressbalance(["RXPCMQLny4EqjEje94dm2CfCfTpxqyXK5L"])
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
@@ -48,20 +48,19 @@ Connect.prototype.getaddressdeltas = function(addresses,start,end,chaininfo){
    "height" 	(number) 	the block height
    "address" 	(string) 	the address
 
-  eg:
+  Example:
    conn.getaddressdeltas(["RXPCMQLny4EqjEje94dm2CfCfTpxqyXK5L"],1,200,true})
    conn.getaddressdeltas(["RXPCMQLny4EqjEje94dm2CfCfTpxqyXK5L"])
 
 */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getaddressdeltas";
-  if(addresses && start && end && chaininfo)
+  if(addresses && typeof start == 'number' && typeof end == 'number' && typeof chaininfo == 'boolean')
     dataString.params = [{addresses:addresses,start:start,end:end,chainInfo:chaininfo}]
   else if(addresses)
     dataString.params = [{"addresses":addresses}]
   else
     dataString.params = []
-    // console.log(JSON.stringify(dataString));
   return rpc.rpc_request(dataString, this.json)
 
 }
@@ -87,7 +86,7 @@ Connect.prototype.getaddressmempool = function(addresses){
    "prevout" 	(string) 	the previous
               transaction output index (if spending)
 
-   eg: conn.getaddressmempool(["RXPCMQLny4EqjEje94dm2CfCfTpxqyXK5L"])
+   Example: conn.getaddressmempool(["RXPCMQLny4EqjEje94dm2CfCfTpxqyXK5L"])
 
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
@@ -99,7 +98,7 @@ Connect.prototype.getaddressmempool = function(addresses){
   return rpc.rpc_request(dataString, this.json)
 }
 
-Connect.prototype.getaddresstxids = function(addresses,start=0,end=0){
+Connect.prototype.getaddresstxids = function(addresses,start,end){
 /*
   The getaddresstxids method returns the txids for an
   address, or addresses. It requires addressindex to be
@@ -120,14 +119,14 @@ Connect.prototype.getaddresstxids = function(addresses,start=0,end=0){
     ,...
   ]
 
-  eg:
+  Example:
   conn.getaddresstxids(["RKPuQ1CzJ7t4jUKzveww3nS1RNGQuyHms5"],1,10)
 */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getaddresstxids";
-  if(addresses,start,end)
+  if(addresses && typeof start =='number' && typeof end== 'number')
     dataString.params = [{"addresses":addresses,"start":start,"end":end}]
-  if(addresses)
+  else if(addresses)
     dataString.params = [{"addresses":addresses}]
   else
     dataString.params = []
@@ -152,7 +151,7 @@ Connect.prototype.getaddressutxos = function(addresses,chainInfo){
   "script" 	(string) 	the script hex encoded
   "satoshis" 	(number) 	the number of satoshis of the output
 
-  eg:
+  Example:
   conn.getaddressutxos(["RKPuQ1CzJ7t4jUKzveww3nS1RNGQuyHms5"],true)
 
 
@@ -160,7 +159,7 @@ Connect.prototype.getaddressutxos = function(addresses,chainInfo){
 
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getaddressutxos";
-  if(addresses && chainInfo)
+  if(typeof addresses=='string' && typeof chainInfo=='boolean')
     dataString.params = [{addresses:addresses,chainInfo:chainInfo}]
   else if(addresses)
     dataString.params = [{"addresses":addresses}]
@@ -193,14 +192,14 @@ Connect.prototype.getsnapshot = function(top){
   "start_time" 	(number) 	the unix epoch time snapshot started
   "end_time" 	(number) 	the unix epoch time snapshot finished
 
-  eg:
+  Example:
   conn.getsnapshot(5)
 
 */
 
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getsnapshot";
-  if(top)
+  if(typeof top=='string' || typeof top == 'number')
     dataString.params = [top.toString()]
   else
     dataString.params = []

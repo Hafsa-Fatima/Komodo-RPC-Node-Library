@@ -24,7 +24,7 @@ Connect.prototype.getblocksubsidy = function(height){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getblocksubsidy";
-  if(height ==0 || height)
+  if(height ==0 || typeof height=='number')
     dataString.params = [height]
   else
     dataString.params = []
@@ -208,7 +208,7 @@ Connect.prototype.prioritisetransaction = function(transaction_id,priority_delta
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "prioritisetransaction";
-  if(transaction_id && (priority_delta || priority_delta==0) && (fee_delta == 0 || fee_delta))
+  if(transaction_id && (typeof priority_delta =='number' || priority_delta==0) && (fee_delta == 0 || typeof fee_delta=='number'))
     dataString.params = [transaction_id,priority_delta,fee_delta]
   else
     dataString.params = []

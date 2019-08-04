@@ -192,7 +192,7 @@ Connect.prototype.getblockhash = function(index){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getblockhash";
-  if(index)
+  if(typeof index == 'number')
     dataString.params = [index]
   else
     dataString.params = []
@@ -227,7 +227,7 @@ Connect.prototype.getblockhashes = function(high,low,noOrphans=false,logicalTime
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getblockhashes";
-  if(high && low)
+  if(typeof high=='number' && typeof low== 'number')
     dataString.params = [high,low,{"noOrphans":noOrphans,"logicalTimes":logicalTimes}]
   else
     dataString.params = []
@@ -330,9 +330,9 @@ Connect.prototype.getchaintxstats = function(nblocks,blockhash){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getchaintxstats";
-  if(nblocks && blockhash)
+  if(typeof nblocks == 'number' && blockhash)
     dataString.params = [nblocks,blockhash]
-  else if(nblocks)
+  else if(typeof nblocks == 'number')
     dataString.params = [nblocks]
   else
     dataString.params = []
@@ -370,13 +370,13 @@ Connect.prototype.getlastsegidstakes = function(depth){
   Only applies to -ac_staked Smart Chains
 
   Arguments
-  Name 	Type 	Description
+
   depth 	(numeric, required) 	the number of blocks
           to scan, starting from the current height
           and working backwards
 
   Response:
-  Name 	Type 	Description
+
   "NotSet" 	(numeric) 	the number of blocks that have no SegId set
   "PoW" 	(numeric) 	the number of blocks created through PoW
   "PoSPerc" 	(numeric) 	the percentage of blocks created through PoS
@@ -388,7 +388,7 @@ Connect.prototype.getlastsegidstakes = function(depth){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getlastsegidstakes";
-  if(depth)
+  if(typeof depth == 'number')
     dataString.params = [depth]
   else
     dataString.params = []
@@ -414,9 +414,7 @@ Connect.prototype.getmempoolinfo = function(){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getmempoolinfo";
-  if(dataString)
-    dataString.params = []
-  else
+
     dataString.params = []
   return rpc.rpc_request(dataString, this.json)
 }
@@ -452,7 +450,7 @@ Connect.prototype.getrawmempool = function(verbose){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getrawmempool";
-  if(verbose)
+  if(typeof verbose == 'boolean')
     dataString.params = [verbose]
   else
     dataString.params = []
@@ -466,12 +464,12 @@ Connect.prototype.getspentinfo = function(txid,index=0){
   The method requires spentindex to be enabled.
 
   Arguments:
-  Name 	Type 	Description
+
   "txid" 	(string) 	the hex string of the transaction id
   "index" 	(number) 	the output's index
 
   Response:
-  Name 	Type 	Description
+
   "txid" 	(string) 	the transaction id
   "index" 	(number) 	the spending input index
 
@@ -480,7 +478,7 @@ Connect.prototype.getspentinfo = function(txid,index=0){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getspentinfo";
-  if(txid)
+  if(txid && typeof index == 'number')
     dataString.params = [{"txid":txid,"index":index}]
   else
     dataString.params = []
@@ -519,7 +517,7 @@ Connect.prototype.gettxout = function(txid,vout,includemempool=false){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "gettxout";
-  if(txid && vout || vout == 0)
+  if(txid && (vout || vout == 0))
     dataString.params = [txid,vout,includemempool]
   else
     dataString.params = []
@@ -613,7 +611,7 @@ Connect.prototype.kvsearch = function(key){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "kvsearch";
-  if(key)
+  if(typeof key == 'string')
     dataString.params = [key]
   else
     dataString.params = []
@@ -627,14 +625,14 @@ Connect.prototype.kvupdate = function(key,value,days,passphrase=''){
   The maximum value memory size is 8kB.
 
   Arguments
-  Name 	Type 	Description
+
   "key" 	(string, required) 	key (should be unique)
   "value" 	(string, required) 	value
   "days" 	(numeric, required) 	amount of days before the key expires (1440 blocks/day); minimum 1 day
   "passphrase" 	(string, optional) 	passphrase required to update this key
 
   Response
-  Name 	Type 	Description
+
   "coin" 	(string) 	the chain on which the key is stored
   "height" 	(numeric) 	the height at which the key was stored
   "expiration" 	(numeric) 	the height at which the key will expire
@@ -651,7 +649,7 @@ Connect.prototype.kvupdate = function(key,value,days,passphrase=''){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "kvupdate";
-  if(key && value && days)
+  if(typeof key =='string' && typeof value == 'string' && typeof days =='number')
     dataString.params = [key,value,days.toString(),passphrase]
   else
     dataString.params = []
@@ -666,11 +664,11 @@ Connect.prototype.minerids = function(height){
   to the 2000 blocks proceeding the indicated "height" block.
 
   Arguments:
-  Name 	Type 	Description
+
   heights 	(number) 	the block height for the query
 
   Response:
-  Name 	Type 	Description
+
   "mined":
   "notaryid" 	(number) 	the id of the specific notary node
   "kmdaddress" 	(string) 	the KMD address of the notary node
@@ -683,7 +681,7 @@ Connect.prototype.minerids = function(height){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "minerids";
-  if(height)
+  if(typeof height=='string')
     dataString.params = [height.toString()]
   else
     dataString.params = []
@@ -697,12 +695,12 @@ Connect.prototype.notaries = function(height,timestamp){
   Either or both of the height and timestamp parameters will suffice.
 
   Arguments
-  Name 	Type 	Description
+
   height 	(number) 	the block height desired for the query
   timestamp 	(number) 	the timestamp of the block desired for the query
 
   Response
-  Name 	Type 	Description
+
   "notaries": [ ... ] 	(array)
   "pubkey" 	(string) 	the public signing key of the indicated notary node, used on the KMD network to create notary-node authorized transactions
   "BTCaddress" 	(string) 	the public BTC address the notary node uses on the BTC blockchain to create notarizations
@@ -717,11 +715,11 @@ Connect.prototype.notaries = function(height,timestamp){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "notaries";
-  if(height && timestamp)
+  if(typeof height =='number' && typeof timestamp=='number')
     dataString.params = [height.toString(),timestamp.toString()]
-  else if(height)
+  else if(typeof height =='number')
     dataString.params = [height.toString()]
-  else if(timestamp)
+  else if(typeof timestamp=='number')
     dataString.params = [timestamp.toString()]
   else
     dataString.params = []
@@ -735,12 +733,12 @@ Connect.prototype.verifychain = function(checklevel,numblocks){
   Depending on the state of your blockchain database and daemon, this call can take a prolonged period of time to complete.
   #
   Arguments
-  Name 	Type 	Description
+
   checklevel 	(numeric, optional, 0-4, default=3) 	indicates the thoroughness of block verification
   numblocks 	(numeric, optional, default=288, 0=all) 	indicates the number of blocks to verify
   #
   Response
-  Name 	Type 	Description
+
   true/false 	(boolean) 	whether the verification was successful
 
   Examples:
@@ -748,7 +746,7 @@ Connect.prototype.verifychain = function(checklevel,numblocks){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "verifychain";
-  if(checklevel && numblocks || checklevel==0 || numblocks == 0)
+  if(( checklevel || checklevel==0) && (numblocks  || numblocks == 0))
     dataString.params = [checklevel,numblocks]
   else
     dataString.params = []

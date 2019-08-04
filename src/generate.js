@@ -70,7 +70,7 @@ Connect.prototype.setgenerate = function(generate=false,genproclimit){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "setgenerate";
-  if(genproclimit)
+  if(typeof generate=='boolean' && typeof genproclimit=='number')
     dataString.params = [generate,genproclimit]
   else
     dataString.params = []

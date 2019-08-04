@@ -102,9 +102,9 @@ Connect.prototype.getaddednodeinfo = function(dns,node){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "getaddednodeinfo";
-  if(node)
+  if(node && typeof dns=='boolean')
     dataString.params = [dns,node]
-  else if(dns || !dns)
+  else if(typeof dns=='boolean')
     dataString.params = [dns]
   else
     dataString.params = []

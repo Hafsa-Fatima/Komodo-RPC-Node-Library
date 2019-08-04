@@ -83,7 +83,7 @@ Connect.prototype.estimatefee = function(nblocks){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "estimatefee";
-  if(nblocks)
+  if(typeof nblocks=='number')
     dataString.params = [nblocks]
   else
     dataString.params = []
@@ -111,7 +111,7 @@ Connect.prototype.estimatepriority = function(nblocks){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "estimatepriority";
-  if(nblocks)
+  if(typeof nblocks=='number')
     dataString.params = [nblocks]
   else
     dataString.params = []
@@ -137,7 +137,7 @@ Connect.prototype.invalidateblock = function(hash){
   */
   let dataString = {"jsonrpc": "1.0", "id":"curltest"};
   dataString.method = "invalidateblock";
-  if(hash)
+  if(typeof hash=='number')
     dataString.params = [hash]
   else
     dataString.params = []
