@@ -11,14 +11,14 @@
 
 
 ## Usage:
-- Create object for Connect class using rpc_user, rpc_password, rpc_ipaddress, rpc_port parameters from YOUR_SMARTCHAIN_name.conf file
+- Create object for Connect class using `rpc_user`, `rpc_password`, `rpc_ipaddress`, `rpc_port` parameters from YOUR_SMARTCHAIN_name.conf file
 - Use the above object to call any method
 - Response is a pending Promise return
 - Use Async/Await vs Promise to capture the response
 
 ##### Example
 Using Async function and await keyword :
-```{.sourceCode .javascript}
+```javascript
 const komodo = require('npm-komodorpc-library');
 
 const conn = new komodo.Connect(rpc_user='user568251219',
@@ -34,7 +34,7 @@ async function mainfunc(){
 mainfunc()
 ```
 Using promise :
-```{.sourceCode .javascript}
+```javascript
 const komodo = require('npm-komodorpc-library');
 
 const conn = new komodo.Connect(rpc_user='user568251219',
@@ -48,12 +48,13 @@ p.then((res)=>console.log(res))
 ```
 
 Create an object of **KomodoRPC Connect** class with following parameters to populate RPC options and authentication parameters.
- |   Argument   |                                   Description                                   |
-|:------------:|:-------------------------------------------------------------------------------:|
-| rpc_username |                         Username for RPC authentication                         |
-| rpc_password |                         Password for RPC authentication                         |
-|   node_ipaddress  | IP address of the node where the Komodo-daemon is running; **Default: '127.0.0.1'** |
-|   rpc_port   |            Port number where the Komodo-daemon is listening for RPCs            |
+|    Argument    |                                          Description                                 |
+|:--------------:|:------------------------------------------------------------------------------------:|
+|  rpc_username  |                              Username for RPC authentication                         |
+|  rpc_password  |                              Password for RPC authentication                         |
+| node_ipaddress |  IP address of the node where the Komodo-daemon is running; **Default: '127.0.0.1'** |
+|    rpc_port    |                 Port number where the Komodo-daemon is listening for RPCs            |
+
 ### Documentation:
 - #### Wiki: [Komodo RPC API Library](https://github.com/Hafsa-Fatima/Komodo-RPC-Node-Library/)
 - #### [Komodo API Guide](https://developers.komodoplatform.com/basic-docs/smart-chains/smart-chain-api/)
