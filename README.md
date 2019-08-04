@@ -47,7 +47,7 @@ p.then((res)=>console.log(res))
 
 ```
 
-Create an object of **KomodoRPC Connect** class with following parameters to populate RPC options and authentication parameters.
+Create an object of **Komodo Connect** class with following parameters to populate RPC options and authentication parameters.
 
 |    Argument    |                                          Description                                 |
 |:--------------:|:------------------------------------------------------------------------------------:|
