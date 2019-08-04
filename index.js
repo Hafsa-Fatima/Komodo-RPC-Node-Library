@@ -14,6 +14,4 @@ const Util = require('./src/util')
 const Crosschain = require('./src/crosschain')
 
 
-module.exports = {
-    Komodo: Komodo
-}
+module.exports = Komodo
