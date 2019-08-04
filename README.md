@@ -1,4 +1,4 @@
-![Komodo_Logo](logo.png?raw=true)
+![Komodo_Logo](komodologo.webp?raw=true)
 # Node JS Library
 #### RPC API-Library for Komodo-based asset chains, for Node JS Developers
 ===============================================
