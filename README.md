@@ -1,12 +1,12 @@
 ![Komodo_Logo](komodologo.png?raw=true)
 # Node JS Library
 #### RPC API-Library for Komodo-based asset chains, for Node JS Developers
-===============================================
+
 ## Description:
 - ##### Komodo RPC library helps you integrate your Node JS Apps with Komodo asset-chains without having to setup/implement required RPC functions. Install this NPM Module and call Komodo API RPCs as easily as calling a local function. Komodo RPC library acts as a wrapper between your Node JS app and the Komodo-daemon running on a server.
-#####
+
 ### Installation:
-#### Install 'npm-komodorpc-library' npm Module:
+Install 'npm-komodorpc-library' npm Module:
   - > ` npm install npm-komodorpc-library `
 
 
@@ -27,8 +27,8 @@ rpc_ipaddress='http://127.0.0.1',
 rpc_port='12450');
 
 async function mainfunc(){
-    let p = await conn.getwalletinfo()
-    console.log(p)
+    let walletinfo = await conn.getwalletinfo() // await works in a async function 
+    console.log(walletinfo)
 }
 
 mainfunc()
@@ -42,8 +42,8 @@ rpc_password='pass766db41922bac0bbe3c1909a41e3dfe0291e2c1b6c76f7172c3e9bdf46f64d
 rpc_ipaddress='http://127.0.0.1',
 rpc_port='12450');
 
-let p = conn.getwalletinfo()
-p.then((res)=>console.log(res))
+let walletinfo = conn.getwalletinfo()
+walletinfo.then((res)=>console.log(res)) //Promise.prototype.then
 
 ```
 
