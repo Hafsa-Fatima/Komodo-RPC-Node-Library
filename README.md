@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-![Komodo_Logo](logo.png?raw=true)
-# Node JS Library
-API for Komodo RPC using Node JS
-
-## == In Development ==
-=======
 ![Komodo_Logo](komodologo.png?raw=true)
 # Node JS Library
 #### RPC API-Library for Komodo-based asset chains, for Node JS Developers
@@ -69,4 +62,3 @@ p.then((res)=>console.log(res))
 - #### [Komodo API Guide](https://developers.komodoplatform.com/basic-docs/smart-chains/smart-chain-api/)
 ### NPM package listing:
 - #### [NPM-komodo-library](https://www.npmjs.com/package/npm-komodorpc-library)
->>>>>>> dev
