@@ -17,7 +17,7 @@
 - Use Async/Await vs Promise to capture the response
 
 ##### Example
-Using Async function and await keyword :
+- Using Async function and await keyword :
 ```javascript
 const komodo = require('npm-komodorpc-library');
 
@@ -33,7 +33,7 @@ async function mainfunc(){
 
 mainfunc()
 ```
-Using promise :
+- Using promise :
 ```javascript
 const komodo = require('npm-komodorpc-library');
 
@@ -47,7 +47,7 @@ p.then((res)=>console.log(res))
 
 ```
 
-Create an object of **Komodo Connect** class with following parameters to populate RPC options and authentication parameters.
+- Create an object of **Komodo Connect** class with following parameters to populate RPC options and authentication parameters.
 
 |    Argument    |                                          Description                                 |
 |:--------------:|:------------------------------------------------------------------------------------:|
